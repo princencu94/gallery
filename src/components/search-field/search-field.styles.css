@@ -1,0 +1,19 @@
+.search {
+    width:30%;
+    height: auto;
+    float:right;
+    position: relative;
+    bottom: 63px;
+    right:70px;
+    
+  }
+  
+  .text {
+    height:30px;
+    width:70%;
+    text-align: center;
+    padding:4px 0px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
