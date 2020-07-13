@@ -1,25 +1,33 @@
 import React from 'react';
 import './image-row.styles.css';
 
-import {ReactComponent as Like } from '../../assets/heart.svg';
 
+import LikeButton from '../like-button/like-button.component';
 class ImageRow extends React.Component {
-        constructor() {
-                super();
+        constructor(props) {
+                super(props);
                 this.state = {
-                        heart:false
+                        heart:true
                 }
         }
 
-        handleChange = (event) => {
+        handleClick = (event) => {
                 event.preventDefault();
+                if(this.state.heart === true) {
+                        this.setState({heart:false})
+                } else if(this.state.heart === false) {
+                        this.setState({heart:true})
+                }
+               
+                console.log("You clicked on the like " + this.state.heart);
         }
         render() {
+                const { heart } = this.state;
                 return (
                 <div className="Images">   
-                        <Like onClick={this.handleChange} className="heart"/>
+                        <LikeButton className={heart ? "unlike" : "like" } />
                         <h3>{this.props.photo.photographer}</h3>
-                        <img key={this.props.photo.id} src={this.props.photo.url} alt="" />
+                        <img onClick={this.handleClick} key={this.props.photo.id} src={this.props.photo.url} alt="" />
                  </div>
                 )
         }

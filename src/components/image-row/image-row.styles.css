@@ -24,28 +24,15 @@
 	text-align: center;
 }
 
-.Images .heart {
-	transition: .5s ease;
-	opacity: 0;
-	position: relative;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	text-align: center;
-}
-
-.Images:hover .heart {
-	opacity: 1;
-}
-
 .Images:hover img {
 	opacity: 0.3;
 	transform: scale(1.1);
+	cursor: pointer;
 }
 
 .Images:hover h3 {
 	opacity: 1;
+	cursor: pointer;
 }
 
 
@@ -57,12 +44,26 @@ h3 {
 	width:70%;
 }
 
-.heart {
-	width:15%;
+.unlike {
+	width:10%;
+}
+.like {
+	width:10%;
+}
+.Images .like {
+	fill: red;
+	cursor: pointer;
+}
+
+.Images .unlike {
+	fill: black;
+	cursor: pointer;
 }
 
 
-
-
+.Images:hover .unlike {
+	opacity: 1;
+	cursor: pointer;
+}
 
 

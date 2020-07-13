@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-//import { galleryData } from '../../redux/photos/photo.actions';
+
 
 import './gallery-overview.styles.css';
 import Gallery from '../gallery/gallery.component';
@@ -23,7 +23,7 @@ class GalleryOverview extends React.Component {
       }
 
     render() {
-        const {searchField } = this.state;
+        const { searchField } = this.state;
         const filteredPhotos = this.props.photos.filter(photo => photo.photographer.toLowerCase().includes(searchField.toLocaleLowerCase()));
         return (
             <div className="gallery-overview">
@@ -40,5 +40,7 @@ class GalleryOverview extends React.Component {
 const mapStateToProps = state => ({
     photos : state.photo.photos
 })
+
+
 
 export default connect(mapStateToProps)(GalleryOverview);

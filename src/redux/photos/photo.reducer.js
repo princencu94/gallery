@@ -1,6 +1,7 @@
 import { photos } from './api';
 const INITIAL_STATE = {
-    photos : photos
+    photos : photos,
+    searchField: ''
 }
 const photoReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
