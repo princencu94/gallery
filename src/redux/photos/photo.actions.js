@@ -1,4 +1,3 @@
-export const galleryData = photos => ({
-    type: 'ALL_PHOTOS',
-    payload: photos
+export const toggleLike = () => ({
+    type: 'TOGGLE_LIKE'
 });

@@ -1,15 +1,17 @@
 import { photos } from './api';
+
 const INITIAL_STATE = {
     photos : photos,
-    searchField: ''
+    like: true
 }
 const photoReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case 'ALL_PHOTOS':
-                return {
+        case 'TOGGLE_LIKE': 
+                return  {
                     ...state,
-                    photos: action.payload
+                    like:!state.like
                 }
+
         default:
             return state;
     }
